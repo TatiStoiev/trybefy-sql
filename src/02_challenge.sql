@@ -1,7 +1,7 @@
 CREATE TABLE plans(
     id INTEGER PRIMARY KEY AUTO_INCREMENT,     
     name VARCHAR(50) NOT NULL,
-    price INTEGER, NOT NULL DECIMAL(5, 2)
+    price DECIMAL(5, 2) NOT NULL
 );
 
 
@@ -17,9 +17,9 @@ CREATE TABLE users(
 
 INSERT INTO plans (id, name, price)
 VALUES  
-        ('Anual', '39.90');
-        ('Mensal', '5.90');
-        ('Trimestral', '19.90');
+        (1, 'Anual', '39.90'),
+        (2, 'Mensal', '5.90'),
+        (3, 'Trimestral', '19.90'),
 
 INSERT INTO users (id, full_name, email, birthday, active, plan_id)
 VALUES
