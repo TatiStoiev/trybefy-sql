@@ -1,25 +1,24 @@
 CREATE TABLE plans (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,     
+    id INT AUTO_INCREMENT PRIMARY KEY,     
     name VARCHAR(50) NOT NULL,
     price FLOAT(5, 2) NOT NULL
 );
 
-
 CREATE TABLE users (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(50) NOT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
     birthday DATE NOT NULL, 
     active BOOLEAN DEFAULT TRUE NOT NULL,
-    plan_id INTEGER NOT NULL,
+    plan_id INT NOT NULL,
     FOREIGN KEY (plan_id) REFERENCES plans (id)
 );
 
-INSERT INTO plans (id, name, price)
+INSERT INTO plans(id, name, price)
 VALUES  
         (1, 'Anual', '39.90'),
         (2, 'Mensal', '5.90'),
-        (3, 'Trimestral', '19.90'),
+        (3, 'Trimestral', '19.90');
 
 INSERT INTO users (id, full_name, email, birthday, active, plan_id)
 VALUES
