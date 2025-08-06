@@ -1,18 +1,18 @@
-CREATE TABLE plans(
-    id INTEGER PRIMARY KEY AUTO_INCREMENT,     
+CREATE TABLE plans (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,     
     name VARCHAR(50) NOT NULL,
-    price DECIMAL(5, 2) NOT NULL
+    price FLOAT(5, 2) NOT NULL
 );
 
 
-CREATE TABLE users(
+CREATE TABLE users (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(50) NOT NULL,
     email VARCHAR(50) UNIQUE NOT NULL,
     birthday DATE NOT NULL, 
     active BOOLEAN DEFAULT TRUE NOT NULL,
     plan_id INTEGER NOT NULL,
-    FOREIGN KEY (plan_id) REFERENCES plans(id)
+    FOREIGN KEY (plan_id) REFERENCES plans (id)
 );
 
 INSERT INTO plans (id, name, price)
